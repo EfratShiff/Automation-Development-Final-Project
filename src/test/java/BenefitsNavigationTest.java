@@ -24,6 +24,7 @@ public class BenefitsNavigationTest {
     void testNavigationFromBenefitsPage(String linkText, String expectedUrlPart) {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        System.out.println("הפרויקט הינו פיתוח פרטי של אפרת שיף גזל למי שמעתיקה");
 
         System.out.println("🚀 התחלת בדיקה עבור: " + linkText);
 
