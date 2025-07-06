@@ -24,12 +24,7 @@ public class BTLMenuTest {
     public void testSearchResultsTitle() {
         String searchQuery = "חישוב סכום דמי לידה ליום";
         page.enterSearchText(searchQuery);
-
-        // בדיקה שהכותרת מכילה את מחרוזת החיפוש
-       // boolean titleIsCorrect = driver.getTitle().contains(searchQuery);
         assertEquals("חישוב סכום דמי לידה ליום - מחשבוני זכויות | ביטוח לאומי",driver.getTitle(),"כותרת הדף לא תואמת את תוצאת החיפוש הצפויה.");
-
-
     }
 
     @AfterEach

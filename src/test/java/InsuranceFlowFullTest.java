@@ -62,11 +62,8 @@ public class InsuranceFlowFullTest {
         ));
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", radioBtn);
-        Thread.sleep(500); // לפעמים נדרש זמן לתת למסך להתייצב
-
+        Thread.sleep(500);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radioBtn);
-
-
 
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ctl00_ctl43_g_642b1586_5c41_436a_a04c_e3b5ba94ba69_ctl00_InsuranceNotSachirWizard_StepNavigationTemplateContainerID_StepNextButton\"]"))).click();

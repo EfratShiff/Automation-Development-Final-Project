@@ -16,7 +16,7 @@ public class BenefitsNavigationTest {
     @ParameterizedTest(name = "בודק ניווט עבור: {0} => כולל: {1}")
     @CsvSource({
             "הבטחת הכנסה, Income_support",
-            "נכות כללית, Disability", // מותאם לשם אמיתי של URL
+            "נכות כללית, Disability",
             "ילד נכה, Disabled_Child",
             "מענק לידה, maanakleda",
             "אמהות, maternity"
@@ -28,20 +28,16 @@ public class BenefitsNavigationTest {
         System.out.println("🚀 התחלת בדיקה עבור: " + linkText);
 
         try {
-            // שלב 1: ניווט לדף הראשי
             driver.get("https://www.btl.gov.il/benefits");
             System.out.println("🔗 נפתח הדף הראשי");
 
-            // שלב 2: לחיצה על הקישור הרצוי
             BenefitsPage benefitsPage = new BenefitsPage(driver);
             System.out.println("🔍 מנסה ללחוץ על הקישור: " + linkText);
             benefitsPage.clickLinkByText(linkText);
 
-            // שלב 3: המתנה לטעינה של כתובת URL חדשה
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.urlContains(expectedUrlPart));
 
-            // שלב 4: בדיקת כתובת ה־URL
             String currentUrl = driver.getCurrentUrl();
             System.out.println("🌐 ה-URL לאחר לחיצה: " + currentUrl);
 
@@ -55,7 +51,7 @@ public class BenefitsNavigationTest {
         } catch (AssertionError ae) {
             System.out.println("❗️ בדיקה נכשלה עבור: " + linkText);
             System.out.println("📛 שגיאה: " + ae.getMessage());
-            throw ae; // נזרק שוב כדי ש-JUnit יסמן ככישלון
+            throw ae;
         } catch (Exception e) {
             System.out.println("💥 שגיאת מערכת: " + e.getMessage());
             e.printStackTrace();

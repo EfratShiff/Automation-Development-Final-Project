@@ -1,5 +1,4 @@
-package pageObject;// src/main/java/pages/BenefitsPage.java
-
+package pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
