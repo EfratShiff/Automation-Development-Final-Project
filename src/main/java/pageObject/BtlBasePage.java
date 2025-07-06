@@ -52,10 +52,10 @@ public void choose(Menu.TopMenuEnum menuItem)
 
     public void enterSearchText(String text) {
         WebElement searchInput = driver.findElement(By.id("TopQuestions"));
-        searchInput.clear(); // נקה את השדה קודם
+        searchInput.clear();
         searchInput.sendKeys(text);
         try {
-            Thread.sleep(3000);// הכנס את הטקסט
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
